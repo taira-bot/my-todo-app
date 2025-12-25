@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Noto_Sans_JP } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
@@ -9,14 +9,28 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "お悩み解決 - 信頼できる専門家を紹介",
+  description: "困っている友人・知人に、信頼できる事業者・専門家を紹介するアプリ",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "お悩み解決",
+  },
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#3b82f6",
+};
+
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
   display: "swap",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export default function RootLayout({
@@ -25,11 +39,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+    <html lang="ja" suppressHydrationWarning>
+      <body className={`${notoSansJP.className} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
