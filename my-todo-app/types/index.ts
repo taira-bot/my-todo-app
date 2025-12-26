@@ -14,6 +14,7 @@ export interface Business {
   user_id: string | null;
   name: string;
   description: string;
+  serviceContent: string;
   email: string;
   is_active: boolean;
   created_at: string;
