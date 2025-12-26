@@ -1,8 +1,6 @@
 // 初期カテゴリ一覧
 export const INITIAL_CATEGORIES = [
   { name: 'コンサル', icon: '💼' },
-  { name: '経営マネジメント', icon: '📊' },
-  { name: '資金プラン', icon: '💰' },
   { name: '車点検整備', icon: '🚗' },
   { name: 'レンタカー', icon: '🚙' },
   { name: '外構工事', icon: '🏗️' },
